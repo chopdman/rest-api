@@ -47,7 +47,7 @@ public class EmployeeController {
         return ResponseEntity.ok(service.update(id, dto));
     }
 
-    @PatchMapping("/{id}/department")
+    @PatchMapping(value = "/{id}/department",produces = "application/vnd.roima.v1+json")
     public ResponseEntity<EmployeeResponseDto> updateDepartment(
             @PathVariable Long id,
             @RequestParam String department) {
@@ -56,10 +56,10 @@ public class EmployeeController {
         return ResponseEntity.ok(service.update(id, dto));
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
+    @DeleteMapping(value = "/{id}",headers = "X-API-VERSION=1")
+    public ResponseEntity<String> delete(@PathVariable Long id) {
         service.delete(id);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok().body("Employee deleted successfully");
     }
 }
 

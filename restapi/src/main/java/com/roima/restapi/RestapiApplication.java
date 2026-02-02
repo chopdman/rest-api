@@ -2,6 +2,7 @@ package com.roima.restapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 @SpringBootApplication(exclude = {org.springdoc.core.configuration.SpringDocHateoasConfiguration.class, org.springdoc.core.configuration.SpringDocDataRestConfiguration.class})
 public class RestapiApplication {

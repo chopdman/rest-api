@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CookieController {
 
-    @GetMapping("/api/v1/cookie")
+    @GetMapping(value = "/api/cookie",params = "version=1")
     public String sendCookie(HttpServletResponse response) {
         Cookie cookie = new Cookie("employee-app", "active");
         response.addCookie(cookie);
